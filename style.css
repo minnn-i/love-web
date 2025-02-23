@@ -1,0 +1,135 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1;
+    text-align: center;
+    height: 100vh; /* ให้เว็บเต็มจอ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* กำหนดให้ทุก Container อยู่ตรงกลาง */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* ปรับปุ่มให้อยู่ตรงกลาง */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ปุ่ม */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff69b4;
+    color: white;
+}
+
+#noBtn {
+    background-color: #ff7f7f;
+    color: white;
+    position: relative; /* ให้ปุ่มหนีได้ */
+}
+
+/* ทำให้ปุ่ม "No" หนี */
+#noBtn:hover {
+    position: absolute;
+}
+
+/* ซ่อนหน้าอื่นตอนแรก */
+.hidden {
+    display: none;
+}
+
+/* ทำให้หัวใจหมุนอยู่ตรงกลาง */
+.loading-heart {
+    width: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* รูปภาพที่มุมทั้งสี่ */
+.corner-image {
+    width: 290px; /* เพิ่มขนาดภาพให้ใหญ่ขึ้น */
+    position: absolute;
+}
+
+.top-left {
+    top: 30px;
+    left: 30px;
+}
+
+.top-right {
+    top: 30px;
+    right: 30px;
+}
+
+.bottom-left {
+    bottom: 30px;
+    left: 30px;
+}
+
+.bottom-right {
+    bottom: 30px;
+    right: 30px;
+}
+/* แอนิเมชันเด้งเข้ามา */
+.corner-image {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: bounceIn 1s ease-out forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ตั้งค่าเวลาสำหรับแต่ละมุม */
+.top-left {
+    animation-delay: 0.2s;
+}
+
+.top-right {
+    animation-delay: 0.4s;
+}
+
+.bottom-left {
+    animation-delay: 0.6s;
+}
+
+.bottom-right {
+    animation-delay: 0.8s;
+}
